@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MainLayout from './components/templates/MainLayout';
+import './App.css';
 
 function App() {
 
@@ -7,6 +9,8 @@ function App() {
   return (
     <>
 
+
+      <MainLayout />
 
 
 

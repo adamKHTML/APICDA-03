@@ -1,20 +1,19 @@
-import React, { ReactNode } from 'react';
-import NavBar from '../organisms/NavBar';
+
+import React from 'react';
+import LoginSection from '../organisms/LoginSection';
 
 interface MainLayoutProps {
-    children: ReactNode;
-    onSearch: (query: string) => void;
-    onLogin: () => void;
+    onLogin: (email: string, password: string) => void;
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children, onSearch, onLogin }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ onLogin }) => {
     return (
-        <div className="min-h-screen flex flex-col">
-            <NavBar onSearch={onSearch} onLogin={onLogin} />
-            <main className="flex-grow p-4">{children}</main>
-            <footer className="p-4 bg-gray-800 text-white text-center">
-                © 2023 MyApp
-            </footer>
+        <div className="flex min-h-screen">
+            <div className="w-full max-w-md p-4 bg-gray-100">
+                <LoginSection onLogin={onLogin} />
+            </div>
+
+            <div className="flex-grow bg-white"></div>
         </div>
     );
 };
